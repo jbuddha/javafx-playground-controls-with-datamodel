@@ -22,8 +22,8 @@
         <AnchorPane fx:id="pane" prefHeight="200.0" prefWidth="200.0">
             <children>
                 <ChoiceBox fx:id="choiceBox" layoutX="14.0" layoutY="24.0" onAction="#onAction" prefWidth="150.0" />
-                <ToggleButton layoutX="106.0" layoutY="148.0" fx:id="toggle" text="Toggle Visibility" />
-                <Button fx:id="adder" layoutX="106.0" layoutY="178.0" text="Add Item" onAction="#addItem"/>
+                <!--<ToggleButton layoutX="106.0" layoutY="148.0" fx:id="toggle" text="Toggle Visibility" />-->
+                <!--<Button fx:id="adder" layoutX="106.0" layoutY="178.0" text="Add Item" onAction="#addItem"/>-->
             </children>
         </AnchorPane>
     </children>

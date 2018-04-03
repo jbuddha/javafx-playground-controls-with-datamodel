@@ -16,24 +16,16 @@ public class Controller extends BaseController implements Initializable {
     public ToggleButton toggle;
 
     @FXML
-    private ChoiceBox<String> choiceBox;
+    private ChoiceBox<Country> choiceBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        choiceBox.setItems(FXCollections.observableArrayList("Asia",
-                                                             "Europe",
-                                                             "Africa",
-                                                             "North America",
-                                                             "South America",
-                                                             "Australia"));
-
-        choiceBox.visibleProperty().bind(toggle.selectedProperty().not());
-
-        choiceBox.setOnAction(this::newOnAction);
-    }
-
-    private void newOnAction(ActionEvent actionEvent) {
-        log("New action performed");
+        choiceBox.setItems(FXCollections.observableArrayList(new Country("India", "Asia"),
+                                                             new Country("China", "Asia"),
+                                                             new Country("Pakistan", "Asia"),
+                                                             new Country("France", "Europe"),
+                                                             new Country("Germany", "Europe"),
+                                                             new Country("Egypt", "Africa")));
     }
 
     @FXML
@@ -41,9 +33,4 @@ public class Controller extends BaseController implements Initializable {
         log("Selected " + choiceBox.getValue());
     }
 
-    @FXML
-    public void addItem(ActionEvent actionEvent) {
-        choiceBox.getItems().add("Item " + System.currentTimeMillis() % 1000);
-        choiceBox.show();
-    }
 }

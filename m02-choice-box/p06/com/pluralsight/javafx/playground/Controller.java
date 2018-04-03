@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Separator;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -20,15 +21,17 @@ public class Controller extends BaseController implements Initializable {
     public ToggleButton toggle;
 
     @FXML
-    private ChoiceBox<Country> choiceBox;
+    private ChoiceBox choiceBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         choiceBox.setItems(FXCollections.observableArrayList(new Country("India", "Asia"),
                                                              new Country("China", "Asia"),
                                                              new Country("Pakistan", "Asia"),
+                                                             new Separator(),
                                                              new Country("France", "Europe"),
                                                              new Country("Germany", "Europe"),
+                                                             new Separator(),
                                                              new Country("Egypt", "Africa")));
 
         choiceBox.setConverter(Country.getStringConverter());

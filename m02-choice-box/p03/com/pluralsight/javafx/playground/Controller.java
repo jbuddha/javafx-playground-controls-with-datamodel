@@ -40,4 +40,10 @@ public class Controller extends BaseController implements Initializable {
     public void onAction(ActionEvent actionEvent) {
         log("Selected " + choiceBox.getValue());
     }
+
+    @FXML
+    public void addItem(ActionEvent actionEvent) {
+        choiceBox.getItems().add("Item " + System.currentTimeMillis() % 1000);
+        choiceBox.show();
+    }
 }
